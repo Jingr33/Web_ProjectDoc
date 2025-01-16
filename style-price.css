@@ -1,0 +1,128 @@
+/* Font*/
+@font-face {
+    font-family: Poppins;
+    src: url(fonts/Poppins-Regular.ttf);
+    font-weight: normal;
+}
+@font-face {
+    font-family: Poppins;
+    src: url(fonts/Poppins-ExtraBold.ttf);
+    font-weight: bold;
+}
+
+/* root */
+:root {
+    --primary-light: #f3efe5;
+    --primary-light-hover: #c1bfbc;
+    --primary-dark: #263545;
+    --primary-darkblue: #153e6b;
+    --bg-light: #f5f5f5;
+    --bg-light-hover: #ececec;
+    --details: #ffbf00;
+    --details-hover: #d8b01f;
+    --divider: #e2e1e166;
+    --divider2: #00000010;
+    --gray-text: #bcbab3;
+    --darkblue-hover: #153f6b14;
+    --info-text: #5b6e85;
+}
+
+/* GENERAL */
+body {
+    background: var(--primary-light);
+}
+.top-gap {
+    height: 70px;
+    width: 100%;
+    background: var(--bg-light);
+}
+.underline {
+    border-bottom: 1px solid var(--divider);
+    margin-bottom: 10px;
+}
+.tabun { /* table-unterline*/
+    border-bottom: 1px solid var(--divider2);
+    padding-bottom: 7px;    
+    padding-top: 10px;
+}
+.row-hover:hover {
+    background: var(--darkblue-hover);
+    transition: background 0.15s;
+}
+.gray-text {
+    color: var(--gray-text);
+}
+
+
+/* MOBILY */
+    /* price-header */
+#price-header {
+    display: block;
+    padding-top: 20px;
+}
+#price-header .contact-href {
+    text-align: left;
+    font-weight: 500;
+}
+#price-header .contact-href a {
+    text-decoration: none;
+    color: var(--details-hover);
+}
+#price-header .contact-href a:hover {
+    color: var(--primary-darkblue);
+    transition: color 0.3s;
+}
+#price-content {
+    text-decoration: none;
+    color: var(--primary-dark);
+    font-size: 1em;
+    font-weight: 400;
+    padding-bottom: 20px;
+}
+#price-content .container {
+    padding-top: 5px;
+    padding-bottom: 10px
+}
+#price-content h2 {
+    font-size: 1.3em;
+    font-weight: 700;
+    color: var(--primary-darkblue);
+    margin-top: 15px;
+}
+#price-content .price-value {
+    font-size: 1em;
+    font-weight: 400;
+}
+#price-content .price-value {
+    font-size: 1em;
+    font-weight: 500;
+}
+#price-footer {
+    padding-bottom: 20px;
+}
+#price-footer small {
+    font-size: 0.9em;
+    font-weight: 350;
+    color: var(--primary-darkblue);
+}
+
+#info p {
+    margin-top: 15px;
+    color: var(--info-text);
+    background: transparent;
+    font-size: 0.9em;
+    font-weight: normal;
+    font-style: italic;
+}
+
+/* PC */
+@media (min-width: 1100px) {
+    #price-content {
+        max-width: 900px;
+        margin-left: calc(50% - 450px)    
+    }
+
+    #info p {
+        font-size: 0.92em;
+    }
+}

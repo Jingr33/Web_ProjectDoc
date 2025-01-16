@@ -1,0 +1,154 @@
+/* Font*/
+@font-face {
+    font-family: Poppins;
+    src: url(fonts/Poppins-Regular.ttf);
+    font-weight: normal;
+}
+@font-face {
+    font-family: Poppins;
+    src: url(fonts/Poppins-ExtraBold.ttf);
+    font-weight: bold;
+}
+@font-face {
+    font-family: BebasNeue;
+    src: url(fonts/BebasNeue-Regular.ttf);
+    font-weight: normal;
+}
+
+/* root */
+:root {
+    /* staré barvy */
+    --primary-light: #f3efe5;
+    --primary-light-hover: #c1bfbc;
+    --primary-dark: #263545;
+    --primary-darkblue: #153e6b;
+    --bg-light: #f5f5f5;
+    --bg-light-hover: #ececec;
+    --details: #ffbf00;
+    --details-hover: #d8b01f;
+    --divider: #e2e1e166;
+    --gray-text: #bcbab3;
+    --error-border: rgb(134, 36, 36);
+    --error-bg: rgba(134, 36, 36, 0.668);
+    --success-border: rgb(24, 80, 24);
+    --success-bg: rgba(24, 80, 24, 0.668);
+}
+
+/* GENERAL */
+body {
+    background: var(--primary-light);
+    position: relative;
+}
+.top-gap {
+    position: relative;
+    height: 80px;
+    width: 100%;
+    background: var(--bg-light);
+}
+
+
+article {
+    display: block;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    min-height: 95vh;
+}
+
+@media (max-width: 460px) {
+    article {
+        background: var(--primary-dark);
+    }
+}
+
+#error-large {
+    position: relative;
+}
+#error-large img {
+    height: calc(100vh - 80px);
+    width: auto;
+    max-height: 1200px;
+}
+#error-large .col-auto {
+    max-width: 60%;
+}
+#error-large .error-text {
+    display: flex;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 15%;
+}
+#error-large .error-text h1 {
+    color: var(--primary-dark);
+    font-size: 150px;
+    font-weight: 700;
+}
+#error-large .error-text h2 {
+    color: var(--primary-dark);
+    font-size: 45px;
+    font-weight: 700;
+}
+#error-large .error-text p {
+    color: var(--primary-dark);
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.top-gap-small {
+    position: relative;
+    height: 72px;
+    width: 100%;
+    background: var(--bg-light);
+    background: var(--primary-dark);
+}
+#error-small {
+    position: relative;
+}
+#error-small .row {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+#error-small .error-text {
+    background: var(--primary-dark);
+    color: var(--primary-light);
+    padding: 20px 10px 20px 10px;
+}
+#error-small .error-text h1 {
+    font-size: 80px;
+    font-weight: 700;
+    text-align: center;
+}
+#error-small .error-text h2 {
+    font-size: 35px;
+    font-weight: 700;
+    text-align: center;
+}
+#error-small .error-text p {
+    font-weight: 400;
+    font-size: 1.05em;
+    text-align: center;
+    color: var(--details);
+}
+#error-small img {
+    width: 100%;
+}
+
+@media (min-width: 800px) {
+    #error-small .error-text h1 {
+        font-size: 60px;
+        font-weight: 700;
+        text-align: center;
+    }
+    #error-small .error-text h2 {
+        font-size: 27px;
+        font-weight: 700;
+        text-align: center;
+    }
+    #error-small .error-text p {
+        font-weight: 400;
+        font-size: 1.0em;
+        text-align: center;
+        color: var(--details);
+    }    
+}

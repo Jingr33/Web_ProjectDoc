@@ -1,0 +1,790 @@
+/* Font*/
+@font-face {
+    font-family: Poppins;
+    src: url(fonts/Poppins-Regular.ttf);
+    font-weight: normal;
+}
+@font-face {
+    font-family: Poppins;
+    src: url(fonts/Poppins-ExtraBold.ttf);
+    font-weight: bold;
+}
+@font-face {
+    font-family: BebasNeue;
+    src: url(fonts/BebasNeue-Regular.ttf);
+    font-weight: normal;
+}
+
+/* root */
+:root {
+    /* staré barvy */
+    --primary-light: #f3efe5;
+    --primary-light-hover: #c1bfbc;
+    --primary-dark: #263545;
+    --primary-darkblue: #153e6b;
+    --bg-light: #f5f5f5;
+    --bg-light-hover: #ececec;
+    --details: #ffbf00;
+    --details-hover: #d8b01f;
+    --divider: #e2e1e166;
+    --gray-text: #bcbab3;
+    --error-border: rgb(134, 36, 36);
+    --error-bg: rgba(134, 36, 36, 0.668);
+    --success-border: rgb(24, 80, 24);
+    --success-bg: rgba(24, 80, 24, 0.668);
+    /* nové barvy */
+    --new-nav: #121c2894;
+    --new-navtext: #fffcec; 
+}
+
+/* GENERAL */
+body {
+    background: var(--primary-light);
+    position: relative;
+}
+.top-gap {
+    height: 70px;
+    width: 100%;
+    background: var(--bg-light);
+}
+.underline {
+    border-bottom: 1px solid var(--divider);
+    margin-bottom: 10px;
+}
+.gray-text {
+    color: var(--gray-text);
+}
+button, a {
+    outline: none;
+    cursor: pointer;
+}
+strong {
+    color: var(--primary-darkblue);
+}
+
+/* Modalní dialog */
+#modal-contact .modal-header {
+    border: none;
+}
+#modal-contact .modal-header h5 {
+    font-size: 1.3em;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--primary-darkblue);
+}
+#modal-contact .modal-header button {
+    border: 0px;
+    background: none;
+}
+#modal-contact .modal-body {
+    color: var(--primary-dark);
+}
+#modal-contact .modal-footer {
+    border: none;
+}
+#modal-contact .modal-footer button {
+    border: none;
+    background: var(--details);
+    font-size: 1.1em;
+    font-weight: 400;
+    color: var(--primary-dark);
+    padding: 8px 15px;
+    border-radius: 3px;
+}
+#modal-contact .modal-footer button:hover {
+    background: var(--details-hover);
+    color: var(--primary-light);
+    transition: all 0.3s;
+}
+#modal-contact .modal-mail-error p {
+    display: flex;
+    width: 100%;
+    color: var(--error-border);
+    font-size: 0.8em;
+    padding-left: 10px;
+    text-align: right;
+}
+    /* mail-error + mail-success*/
+#mail-success, #mail-error {
+    display: block;
+    position: absolute;
+    width: 100%;
+    top: 88px;
+    left: 50%;
+    transform:translateX(-50%) ;
+    border-radius: 4px;
+    padding: 8px 10px 0px 10px;
+    z-index: 10;
+    justify-content: center;
+}
+#mail-error {
+    background: var(--error-bg);
+    border: 1.5px solid var(--error-border);
+}
+#mail-success {
+    background: var(--success-bg);
+    border: 1.5px solid var(--success-border);
+}
+#mail-success p, #mail-error p {
+    margin-top: 5px;
+    text-align: center;
+    color: var(--primary-light);
+}
+#mail-success button, #mail-error button {
+    border: none;
+    background: transparent;
+    font-size: 1.4em;
+    color: var(--primary-light);
+}
+
+
+/* TOOLTIPY */
+.tooltip-href {
+    text-decoration: none;
+    border-bottom: 2px dotted var(--primary-darkblue);
+    color: var(--primary-dark);
+}
+.tooltip-href:hover {
+    color: var(--primary-dark);
+}
+.tooltip-inner {
+    background: var(--primary-darkblue) !important;
+    color: var(--primary-light);
+}
+.bs-tooltip-top .tooltip-arrow::before,
+.bs-tooltip-auto[data-popper-placement^=top] .tooltip-arrow::before {
+    border-top-color: var(--primary-darkblue) !important;
+}
+
+
+/* Mobily */
+    /*Navline*/
+#nav {
+    position: fixed;
+    display: flex;
+    max-width: 100vw;
+    background: var(--new-nav);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 72px;
+    justify-content: space-between;
+    z-index: 2;
+    box-shadow: rgba(0, 0, 0, 0.10) 0px 3px 8px;
+}
+        /* Nav-logo */
+#nav a {
+    text-decoration: none;
+}
+#nav-logo {
+    position: relative;
+    display: inline-block;
+    background: url(pictures/logo/logo_opt.png) no-repeat;
+    background-size: 60px 60px;
+    height: 70px;
+    align-items: center;
+    background-position-y: center;
+    background-position-x: left;
+}
+#nav-logo h2 {
+    margin-left: 69px;
+    margin-top: 13px;
+    margin-bottom: 2px;
+    padding: 0;
+    color: var(--primary-light);
+    text-decoration: none;
+    text-transform: uppercase;
+    line-height: 1.0em;
+    font-family: BebasNeue;
+    font-size: 2.6em;
+    font-weight: 500;
+}
+#nav-logo h3 {
+    margin-left: 69px;
+    margin-top: 5px;
+    margin-bottom: 0;
+    padding: 0;
+    color: var(--bg-light);
+    text-decoration: none;
+    text-transform: uppercase;
+    line-height: 0.47em;
+    font-family: BebasNeue;
+    font-size: 0.7em;
+    font-weight: normal;
+    letter-spacing: 0.3em;
+}
+        /* Dropdown pro mobily */
+#nav-dropdown {
+    display: flex;
+    position: relative;
+    background: transparent;
+}
+#dropdown-menu button {
+    padding: 0;
+    margin: 0;
+    background: transparent;
+}
+
+/* menu tlačítko pro dropdown */
+#nav-dropdown #menu-button {
+    height: 40px;
+    width: 60px;
+    margin: 15px 5px 15px 5px;
+    border-top: 5px solid var(--bg-light);
+    border-bottom: 5px solid var(--bg-light);
+    background: transparent;
+    position: relative;
+}
+#nav-dropdown #menu-button::before {
+    content: "";
+    position: absolute;
+    background: var(--bg-light);
+    width: 60px;
+    height: 5px;
+    top: 12.5px;
+    left: 0;
+}
+#nav-dropdown ul {
+    padding: 0;
+    width: 350px;
+    border: none;
+}
+#nav-dropdown li {
+    background: var(--primary-dark);
+    line-height: 50px;
+    border: none;
+}
+#nav-dropdown li:hover {
+    background: var(--primary-darkblue);
+    transition: background 0.3s;
+}
+#nav-dropdown li:last-child {
+    background: var(--details);
+    text-transform: uppercase;
+}
+#nav-dropdown li:last-child:hover {
+    background: var(--details-hover);
+    transition: all 0.3s;
+}
+#nav-dropdown a {
+    color: var(--primary-light);
+    font-size: 1.2em;
+    font-weight: 500;
+    padding-left: 10px;
+    padding-right: 280px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+#nav-dropdown .dropdown-difference {
+    color: var(--primary-dark);
+    transition: color 0.3s;
+}
+#nav-dropdown .dropdown-difference :hover {
+    color: var(--primary-light);
+    transition: color 0.3s;
+}
+        /* Navigace large */
+nav {
+    display: none;
+}
+        /* Tlačítko - nezávazná poptávka */
+#nav-button {
+    display: none;
+}
+
+
+    /* Article */
+article {
+    background: var(--bg-light);
+    max-width: 100%;
+    position: relative;
+}
+article .container {
+    max-width: 800px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.container h1 {
+    padding-top: 20px;
+    font-size: 1.8em;
+    font-weight: 700;
+    text-align: center;
+    color: var(--primary-darkblue);
+    text-decoration: none;
+    text-transform: uppercase;    
+}
+.container p {
+    font-size: 1.1em;
+    font-weight: 400;
+    text-align: justify;
+    color: var(--primary-dark);
+    text-decoration: none;    
+} 
+article img {
+    width: 100%;
+}
+
+
+    /* Patička - footer */
+footer {
+    background: var(--primary-dark);
+    position: relative;
+}
+#footer-sm {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    height: auto;
+    color: var(--primary-light);
+    max-width: 600px;
+}
+        /* Patička - demand-button */
+footer .footer-demand-button {
+    margin: 10px;
+    padding: 5px;
+    padding-bottom: 15px;
+    align-items: center;
+    text-align: center;
+}
+footer .footer-demand-button .col-6 {
+    justify-content: center;
+}
+footer .footer-demand-button h3 {
+    font-size: 1.5em;
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--primary-light);
+}
+footer .footer-demand-button button {
+    background: var(--details);
+    color: var(--primary-dark);
+    font-size: 1.2em;
+    font-weight: 400;
+    text-decoration: none;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+}
+footer .footer-demand-button button:hover {
+    background: var(--details-hover);
+    color: var(--primary-light);
+    transition: all 0.3s;
+}
+        /* Patička - kontakt */
+footer .footer-contact {
+    display: block;
+    position: relative;
+    margin: 10px;
+    color: var(--primary-light);
+}
+#footer-sm .footer-contact a {
+    text-decoration: none;
+}
+#footer-sm .footer-contact a h3 {
+    font-size: 1.2em;
+    font-weight: 500;
+    color: var(--gray-text);
+    text-decoration: none;
+}
+
+#footer-sm .footer-contact span {
+    color: var(--primary-light);
+}
+#footer-sm .footer-contact .gray-text {
+    color: var(--gray-text);
+}
+#footer-sm .footer-contact a h3:hover {
+    color: var(--details);
+    transition: color 0.3s;
+}
+#footer-contact-adress {
+    background: url(pictures/footer/adress-icon2.png) no-repeat;
+    background-size: 50px 50px;
+    background-position-y: 10px;
+    margin: 0;
+    margin-left: 15px;
+    padding: 0;
+    min-height: 60px;
+    align-items: center;
+}
+#footer-contact-email {
+    background: url(pictures/footer/email-icon2.png) no-repeat;
+    background-size: 50px 50px;
+    margin: 0;
+    margin-left: 15px;
+    padding: 0;
+    min-height: 60px;
+    align-items: center;
+}
+#footer-contact-tel {
+    background: url(pictures/footer/tel-icon2.png) no-repeat;
+    background-size: 50px 50px;
+    margin: 0;
+    margin-left: 15px;
+    padding: 0;
+    min-height: 60px;
+    align-items: center;
+}
+#footer-contact-adress > *, #footer-contact-email > *, #footer-contact-tel > * {
+    margin-left: 70px;
+    font-size: 1em;
+    font-weight: 400;
+    text-decoration: none;
+
+}
+        /* Patička - copyright */
+footer .footer-copyright {
+    color: var(--primary-light);
+    font-size: 1em;
+    font-weight: 300;
+    text-decoration: none;
+    margin-bottom: 5px;
+    text-justify: center;
+}
+footer .footer-copyright .col {
+    text-align: center;
+}
+        /* footer-lg */
+#footer-lg {
+    display: none;
+}
+/* Počítače */
+@media (min-width: 1100px) {
+    /* GENERAL */
+    .top-gap {
+        height: 80px;
+    }
+
+    /* Navline */
+    #nav {
+        height: 80px;
+        z-index: 2;
+    }
+        /* Nav-logo */
+    #nav-logo {
+        height: 80px;
+        background-size: 65px 65px;
+    }
+    #nav-logo h2 {
+        margin-top: 15px;
+        margin-left: 72px;
+        margin-bottom: 10px;
+        font-size: 2.4em;
+        font-weight: normal;
+    }
+    #nav-logo h3 {
+        margin-left: 72px;
+        font-size: 0.75em;
+        margin-bottom: 1px;
+    }
+    /* #nav-logo span {
+        margin-left: 72px;
+        font-size: 1em;
+    } */
+        /* Dropdown pro mobily */
+    #nav-dropdown {
+        display: none;
+    }
+        /*Navigace */
+    nav {
+        display: inline-block;
+        position: relative;
+        justify-content: space-around;
+    }
+    nav ul {
+        list-style-type: none;
+        height: 100%;
+    }
+    nav ul li a {
+        color: var(--new-navtext);
+        font-size: 1.1em;
+        font-weight: 400;
+        text-decoration: none;
+        line-height: 70px;
+        padding: 15px 13px;
+        border: none;
+        transition: color 0.3s;
+    }
+    nav ul li {
+        border-bottom: 2px solid transparent;
+        position: relative;
+    }
+    nav ul li a:hover {
+        text-decoration: none;
+        color: var(--new-navtext); 
+    }
+    nav ul li:before {
+        /* border-bottom: 2px solid var(--new-navtext); */
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        height: 2px;
+        width: 0;
+        background: var(--new-navtext);
+        transition: width 0.3s ease-out;
+    }
+    nav ul li:hover::before {
+        width: 100%;
+    }
+    .active {
+        position: relative;
+    }
+
+    .active::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        height: 2px;
+        width: 100%;
+        background: var(--new-navtext);
+        transition: width 0.3s ease-out;
+    }
+
+    /* tlačítko nezávazná poptávka */
+    #nav-button {
+        display: flex;
+        position: relative;
+        background: var(--details);
+        font-size: 1.05rem;
+        font-weight: 500;
+        color: var(--primary-dark);
+        text-transform: uppercase;
+        text-decoration: none;
+        height: 60px;
+        padding: 2px 20px 0 20px;
+        align-items: center;
+        margin-top: 10px;
+        margin-right: 10px;
+        border: none;
+        border-radius: 4px;
+        transition: all 0.3s;
+    }
+    #nav-button:hover {
+        background: var(--details-hover);
+        color: var(--primary-light);
+    }
+
+
+    /* ARTICLE */
+    article .container {
+        max-width: 1100px;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    
+
+    /* FOOTER */
+        /*footer-sm*/
+    #footer-sm * {
+        display: none;
+    }
+        /*footer-lg*/
+    #footer-lg {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        width: 100%;
+        max-width: 1100px;
+        height: auto;
+        color: var(--primary-light);
+        margin-top: 15px;
+    }
+    #footer-lg > * {
+        margin: 0 10px;
+    }
+        /*footer-content*/
+    #footer-lg .footer-content {
+        width: 100%;
+        display: flex;
+        padding-bottom: 15px;
+        margin: 0 10px;
+    }
+        /*footer-logo */
+    #footer-lg .footer-logo {
+        text-align: center;
+        align-self: center;
+    }
+    #footer-lg .footer-content a {
+        text-decoration: none;
+    }
+    #footer-lg .footer-logo img {
+        height: 120px;
+        width: 120px;
+        margin: 0 0 5px 0;
+        padding: 0;
+    }
+    #footer-lg .footer-logo h3 {
+        padding-top: 3px;
+        font-size: 1.2em;
+        font-weight: 500;
+        color: var(--primary-light);
+        text-transform: uppercase;
+        margin: 0;
+    }
+    #footer-lg .footer-logo span {
+        padding-top: 3px;
+        font-size: 1em;
+        font-weight: 300;
+        color: var(--details);
+        text-transform: capitalize;
+    }
+        /*footer-nav*/
+    #footer-lg .footer-nav h3 {
+        font-size: 1.1em;
+        font-weight: 500;
+        color: var(--gray-text);
+    }
+    #footer-lg .footer-nav ul {
+        padding: 10px 0 0 0;
+        align-self: center;
+    }
+    #footer-lg .footer-nav li {
+        list-style-type: none;
+        margin-bottom: 2px;
+    }
+    #footer-lg .footer-nav a {
+        font-size: 1em;
+        font-weight: 300;
+        text-decoration: none;
+        color: var(--primary-light);
+    }
+    #footer-lg .footer-nav a:hover {
+        color: var(--details);
+        transition: color   0.3s;
+    }
+        /*footer-contact-lg*/
+    #footer-lg .footer-contact-lg {
+        margin-right: 70px;
+        margin-left: 70px;
+    }
+    #footer-lg .footer-contact-lg span {
+        color: var(--primary-light);
+    }
+    #footer-lg .footer-contact-lg .gray-text {
+        color: var(--gray-text);
+    }
+    #footer-lg .footer-contact-lg h3 {
+        font-size: 1.1em;
+        font-weight: 500;
+        color: var(--gray-text);
+    }
+    #footer-lg .footer-contact-lg h3:hover {
+        color: var(--details);
+        transition: color 0.3s;
+    }
+    #footer-lg .footer-contact-lg a {
+        text-decoration: none;
+    }
+    #footer-lg .footer-contact-lg h4 {
+        font-size: 1em;
+        font-weight: 500;
+        color: var(--primary-light);
+    }
+    #footer-lg .footer-contact-lg button {
+        background: var(--details-hover);
+        color: var(--primary-light);
+        font-size: 1.1em;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-decoration: none;
+        border: none;
+        border-radius: 4px;
+        padding: 7px 25px;
+        margin-top: 10px;
+        margin-left: 15px;
+        width: auto;
+    }
+    #footer-lg .footer-contact-lg button:hover {
+        background: var(--details);
+        color: var(--primary-dark);
+        transition: all 0.3s;
+    }
+    #footer-lg .footer-contact-lg .underline {
+        padding-bottom: 10px;
+    }
+    #footer-contact-adress {
+        background: url(pictures/footer/adress-icon2.png) no-repeat;
+        background-size: 30px 30px;
+        background-position-y: 20px;
+        margin: 0;
+        margin-left: 15px;
+        padding: 0;
+        min-height: 35px;
+        align-items: center;
+    }
+    #footer-contact-email {
+        background: url(pictures/footer/email-icon2.png) no-repeat;
+        background-size: 30px 30px;
+        margin: 0;
+        margin-left: 15px;
+        padding: 0;
+        min-height: 35px;
+        align-items: center;
+    }
+    #footer-contact-tel {
+        background: url(pictures/footer/tel-icon2.png) no-repeat;
+        background-size: 30px 30px;
+        margin: 0;
+        margin-left: 15px;
+        padding: 0;
+        min-height: 35px;
+        align-items: center;
+    }
+    #footer-contact-adress > *, #footer-contact-email > *, #footer-contact-tel > * {
+        margin-left: 70px;
+        font-size: 1em;
+        font-weight: 300;
+        text-decoration: none;
+    }
+        /* footer-href*/
+    #footer-lg .footer-href h3 {
+        font-size: 1.1em;
+        font-weight: 500;
+        color: var(--gray-text);
+    }
+    #footer-lg .footer-href ul {
+        padding: 10px 0 0 0;
+    }
+    #footer-lg .footer-href li {
+        list-style-type: none;
+    }
+    #footer-lg .footer-href a {
+        color: var(--primary-light);
+        font-size: 0.9em;
+        font-weight: 300;
+        text-decoration: none;
+    }
+    #footer-lg .footer-href a:hover {
+        color: var(--details);
+        transition: color 0.3s;
+    }
+}
+
+/* NAV PRO NEJMENŠÍ ZAŘÍZENÍ */
+@media (max-width: 410px) {
+    #nav-logo h2 {
+        margin-top: 20px;
+        margin-left: 72px;
+        margin-bottom: 10px;
+        font-size: 1.5em;
+    }
+    #nav-logo h3 {
+        margin-left: 72px;
+        font-size: 0.6em;
+        margin-bottom: 1px;
+    }
+}
+
+/* keyframes */
+@keyframes growDown {
+    0% {
+        transform: scaleY(0)
+    }
+    100% {
+        transform: scaleY(1)
+    }
+}

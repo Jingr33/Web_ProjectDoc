@@ -1,0 +1,415 @@
+/* Font*/
+@font-face {
+    font-family: Poppins;
+    src: url(fonts/Poppins-Regular.ttf);
+    font-weight: normal;
+}
+@font-face {
+    font-family: Poppins;
+    src: url(fonts/Poppins-ExtraBold.ttf);
+    font-weight: bold;
+}
+
+/* root */
+:root {
+    --primary-light: #f3efe5;
+    --primary-light-hover: #c1bfbc;
+    --primary-dark: #263545;
+    --primary-darkblue: #153e6b;
+    --bg-light: #f5f5f5;
+    --bg-light-hover: #ececec;
+    --details: #ffbf00;
+    --details-hover: #c39e1a;
+    --details-hover-2: #d2ab1c;
+    --divider: #e2e1e166;
+    --gray-text: #bcbab3;
+    --overlapp-dark: #212930;
+}
+
+/* GENERAL */
+body {
+    background: var(--primary-light);
+}
+.top-gap {
+    height: 70px;
+    width: 100%;
+    background: var(--bg-light);
+}
+.underline {
+    border-bottom: 1px solid var(--divider);
+    margin-bottom: 10px;
+}
+.gray-text {
+    color: var(--gray-text);
+}
+
+/* MOBILY*/
+#landing-carousel {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+    background: var(--primary-dark);
+    margin: 0;
+    padding: 0;
+}
+#landing-carousel img {
+    opacity: 0.45;
+}
+#landing-carousel #Carousel {
+    margin: 0;
+    padding: 0;
+}
+#overlapp-text {
+    display: none;
+    position: absolute;
+    width: 100%;
+    max-width: 700px;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    background: transparent;
+    color: var(--primary-light);
+}
+#overlapp-text h1 {
+    font-family: BebasNeue;
+    font-size: 5em;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-left: 0.43em;
+    text-align: center;
+}
+#overlapp-text h1 span {
+    margin: 0;
+    padding: 0;
+    margin-left: -0.43em;
+    text-shadow: -0.08em 0.03em 0.12em rgba(0,0,0, 0.7);
+}
+#overlapp-text .word-gap {
+    margin-right: 0.43em;
+}
+#overlapp-text p {
+    text-align: justify;
+    font-size: 1.1em;
+}
+#overlapp-text button {
+    background: transparent;
+    color: var(--primary-light);
+    border: 1.5px solid var(--details);
+    border-radius: 4px;
+    padding: 12px 20px;
+    margin-left: 50%;
+    margin-top: 10px;
+    transform: translate(-50%, 0);
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+#overlapp-text button:hover {
+    color: var(--primary-dark);
+    background: var(--details);
+    transition: all  0.3s;
+}
+
+/* aboutus */
+@media (max-width: 1200px) {
+    #aboutus {
+        margin: 0;
+        /*padding: 95px 0 40px 0;*/
+        padding-bottom: 20px;
+        width: 100%;
+        background: var(--overlapp-dark);
+        position: relative;
+        display: flex;
+
+    }
+    #aboutus h1 {
+        font-size: 3.6em;
+        font-weight: 700;
+        padding-top: 30px;
+        margin: 0;
+        text-transform: uppercase;
+        text-align: center;
+        font-family: BebasNeue;
+        color: var(--primary-light);
+    }
+    #aboutus .container p {
+        padding: 0 20px 0 20px;
+        color: var(--primary-light);
+        margin-top: 15px;
+    }
+}
+
+/* gradient pozadí aboutus */
+@media (max-width: 575px) {
+    #aboutus {
+        background: var(--primary-dark);
+        background: linear-gradient(0deg, var(--overlapp-dark) 50%, var(--primary-dark) 70%);
+    }
+    #aboutus .col-12 {
+        margin: auto 0;
+        padding: auto 0;
+    }
+}
+
+/* #activities */
+#activities {
+    margin-top: 0;
+    margin-bottom: 0;
+    width: 100%;
+    background: var(--bg-light);
+}
+#activities .activ-pics {
+    margin: 0;
+    padding: 0;
+    /*max-height: 300px;*/
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+#activities .activ-content {
+    margin: 0;
+    padding: 80px 100px 30px 120px;
+}
+#activities .activ-content h2 {
+    color: var(--primary-darkblue);
+    font-size: 2em;
+    font-weight: 600;
+    padding-bottom: 10px;
+}
+#activities .activ-content p {
+    color: var(--primary-dark);
+    font-size: 1em;
+    font-weight: 400;
+    padding-bottom: 10px;
+}
+#activities .activ-content button {
+    color: var(--primary-dark);
+    font-size: 1.2em;
+    font-weight: 600;
+    background: transparent;
+    border: 1.5px solid var(--details);
+    border-radius: 4px;
+    padding: 14px 23px;
+    transition: all 0.3s;
+}
+#activities .activ-content button:hover {
+    background: var(--details-hover-2);
+    color: var(--primary-light);
+    border: 1.5px solid var(--details-hover-2);
+    transition: all 0.3s;
+}
+
+#reviews #write-review {
+    background: var(--details);
+}
+#reviews #write-review a {
+    text-decoration: none;
+    text-align: center;
+}
+#reviews #write-review button {
+    margin: 0px auto 25px auto;
+    color: var(--primary-dark);
+    background: var(--bg-light);
+    border: none;
+    border-radius: 4px;
+    padding: 13px 28px;
+    font-size: 1.2em;
+    font-weight: 500;
+    transition:  all 0.3s;
+}
+#reviews #write-review button:hover {
+    color: var(--primary-light);
+    background: var(--primary-dark);
+    transition: all 0.3s;
+}
+
+/* vylepšwní menší obrazovky, aby se nerozjížděly orázky */
+@media (min-width: 992px) and (max-width:1100px) {
+    #activities .activ-content h2 {
+        padding-bottom: 0;
+    }
+    #activities .activ-content p {
+        padding-bottom: 0;
+    }
+    #activities .activ-content button {
+        padding: 8px 15px;
+    }
+    #activities .activ-content {
+        padding: 25px 50px 25px 70px;
+    }
+}
+
+@media (max-width: 991px) {
+    /* #activities */
+    #activities {
+        padding-bottom: 30px;
+    }
+    #activities .activ-content {
+        padding: 30px 35px 20px 35px;
+    }
+    /* reviews-small */
+    #reviews-small {
+        background: var(--details);
+        display: flex;
+        position: relative;
+        padding: 95px 0 40px 0;
+    }
+    #reviews-small::after {
+        content: "Reference";
+        background: transparent;
+        position: absolute;
+        top: -20px;
+        left:  5px;
+        color: var(--details-hover);
+        opacity: 0.4;
+        font-size: 5em;
+        font-weight: 500;
+    }
+    #reviews-small .car-revs {
+        position: relative;
+        max-width:460px;
+    }
+    #reviews-small .card {
+        background: var(--bg-light);
+        border-radius: 8px;
+        max-width: 280px;
+        margin: 0 60px;
+    }
+    #reviews-small .card-header {
+        background: transparent;
+        padding-bottom: 0;
+        padding-top: 15px;
+        border-bottom: none;
+        margin: 0;
+    }
+    #reviews-small .card-header .profil-photo {
+        width: 60px;
+        height: 60px;
+        clip-path: circle(50%);
+    }
+    #reviews-small .card-header h4 {
+        font-size: 1.1em;
+        font-weight: 450;
+        color: var(--primary-dark);
+        line-height: 1em;
+        margin: 6px 0 0 0;
+        padding: 0;
+    }
+    #reviews-small .card-header .review-stars{
+        width: 120px;
+    }
+    #reviews-small .card-body {
+        background: transparent;
+        margin: 7px 0 0 0;
+        padding: 10px 20px 10px 25px;
+    }
+    #reviews-small .card-body h3 {
+        color: var(--primary-dark);
+        font-size: 1.2em;
+        font-weight: 500;
+    }
+    #reviews-small .card-body p {
+        color: var(--primary-dark);
+        font-size: 0.95em;
+        font-weight: 300;
+    }
+}
+
+@media (min-width: 992px) {
+    /* #reviews-big*/
+    #reviews-big {
+        display: block;
+        background: var(--details);
+        padding: 90px 0 40px 0;
+        display: flex;
+        position: relative;
+    }
+
+    #reviews-big::after {
+        content: "Reference ";
+        background: transparent;
+        position: absolute;
+        left: 15px;
+        top:-30px;
+        color: var(--details-hover);
+        font-size: 6em;
+        font-weight: 500;
+        margin: 0;
+        padding: 0;
+        opacity: 0.4;
+    }
+
+    #reviews-big .reviews-content {
+        max-width: 900px;
+        margin-left: calc(50% - 900px/2);
+    }
+    #reviews-big .card {
+        border-radius: 8px;
+        padding-left: 10px;
+        padding-right: 10px;
+        background: var(--bg-light);
+    }
+    #reviews-big .card-header {
+        background: transparent;
+        border-bottom: none;
+        margin: 0;
+        padding-bottom: 0px;
+        padding-top: 15px;
+    }
+    #reviews-big .card-header .profil-photo {
+        clip-path: circle(50%);
+        height: 60px;
+        width: 60px;
+    }
+    #reviews-big .card-header h4 {
+        font-size: 1.1em;
+        font-weight: 450;
+        color: var(--primary-dark);
+        line-height: 1em;
+        margin: 6px 0 0 0;
+        padding: 0;
+    }
+    #reviews-big .card-header .review-stars{
+        width: 120px;
+    }
+    #reviews-big .card-body {
+        background: transparent;
+        margin: 7px 0 0 0;
+        padding: 10px 20px 10px 25px;
+    }
+    #reviews-big .card-body h3 {
+        color: var(--primary-dark);
+        font-size: 1.2em;
+        font-weight: 500;
+    }
+    #reviews-big .card-body p {
+        color: var(--primary-dark);
+        font-size: 0.95em;
+        font-weight: 300;
+    }
+}
+
+@media (max-width: 410px) {
+    #reviews-small {
+        padding: 65px 0 40px 0;
+    }
+    #reviews-small::after {
+        font-size: 4em;
+    }
+    #reviews-small .card {
+        max-width: 300px;
+        margin: 0 20px;
+    }
+    #reviews-small .card-header .profil-photo {
+        width: 40px;
+        height: 40px;
+        margin-top: 10px;
+    }
+    #reviews-small .card-header .review-stars{
+        width: 100px;
+    }
+    #reviews-small .card-body {
+        padding: 10px 10px 10px 10px;
+    }
+}

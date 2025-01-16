@@ -1,0 +1,417 @@
+/* Font*/
+@font-face {
+    font-family: Poppins;
+    src: url(fonts/Poppins-Regular.ttf);
+    font-weight: normal;
+}
+@font-face {
+    font-family: Poppins;
+    src: url(fonts/Poppins-ExtraBold.ttf);
+    font-weight: bold;
+}
+
+/* root */
+:root {
+    --primary-light: #f3efe5;
+    --primary-light-hover: #c1bfbc;
+    --primary-dark: #263545;
+    --primary-darkblue: #153e6b;
+    --bg-light: #f5f5f5;
+    --bg-light-hover: #ececec;
+    --details: #ffbf00;
+    --details-hover: #d8b01f;
+    --divider: #e2e1e166;
+    --gray-text: #bcbab3;
+    --primary-dark-opacity: #153f6b4c;
+}
+
+/* GENERAL */
+body {
+    background: var(--primary-light);
+}
+.top-gap {
+    height: 70px;
+    width: 100%;
+    background: var(--bg-light);
+}
+.underline {
+    border-bottom: 1px solid var(--divider);
+    margin-bottom: 10px;
+}
+.gray-text {
+    color: var(--gray-text);
+}
+
+/*ps-header*/
+#ps-header {
+    text-align: center;
+    margin-top: 20px;
+    display: block;
+}
+#ps-header h1 {
+    margin-left: 0.43em;
+}
+#ps-header h1 span {
+    margin: 0 0 0 -0.43em;
+    padding: 0;
+    text-shadow: -0.08em 0.03em 0.2em var(--primary-dark-opacity);
+}
+#ps-header .word-gap {
+    margin-right: 0.5em;
+}
+        /*ps-timeline*/
+#ps-timeline {
+    display: none;
+}
+        /* ps-content */
+#ps-content {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+#ps-content .h-steps {
+    display: none;
+    margin-left: 40px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 1.7em;
+    font-weight: 600;
+    color: var(--primary-darkblue);
+    text-decoration: none;
+}
+#ps-content .ps-icon img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    margin: 5px;
+    margin-left: 10px;
+}
+#ps-content .ps-text {
+    padding-left: 20px;
+}
+#ps-content .ps-text h2 {
+    font-size: 1.4em;
+    font-weight: 700;
+    color: var(--primary-darkblue);
+    text-decoration: none;
+}
+#ps-content .ps-text p {
+    font-size: 1em;
+    font-weight: 350;
+    color: var(--primary-dark);
+    text-decoration: none;
+    align-self: center;
+}
+#ps-content .steps {
+    max-width: 800px;
+    margin-bottom: 10px;
+}
+#ps-content .steps > .row {
+    padding: 15px 20px;
+}
+
+@media(min-width: 768px) {
+    /* CELÁ TATO SEKCE SE ZOBRAZUJE JENOM V ŠIROKÉM ROZLIŠENÍ */
+    #ps-content .steps .row {
+        display: flex;
+        flex-direction: row;
+    }
+    #ps-content .steps .col-md-4 {
+        justify-content: center;
+        align-items: center;
+    }
+    #ps-content .steps small {
+        padding-bottom: 20px;
+        color: var(--primary-dark);
+        font-size: 1.3em;
+        font-weight: normal;
+        font-style: italic;
+    }
+
+    #ps-content .aprox-time {
+        background: transparent;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 15px;
+        margin-bottom: 30px;
+    }
+    #ps-content .blue-arrow, 
+    #ps-content .yellow-underline {
+        position: relative;
+    }
+    #ps-content .blue-arrow::after, 
+    #ps-content .yellow-underline::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -35px;
+        height: 40px;
+        width: 100%;
+    }
+    #ps-content .blue-arrow::after {
+        clip-path: polygon(10% 0, 42.5% 0, 50% 95%, 57.5% 0, 90% 0, 90% 3%, 57.6% 3%, 50% 100%, 42.4% 3%, 10% 3%);
+        background: var(--primary-darkblue);
+    }
+    #ps-content .yellow-underline::after {
+        background: var(--details);
+        clip-path: polygon(10% 20%, 90% 20%, 90% 30%, 10% 30%);
+    }
+}
+
+/* CELÁ TATO SEKCE SE ZOBRAZUJE JENOM V MALÉM ROZLIŠENÍ */
+#ps-content .s-arrow {
+    padding-top: 10px;
+    padding-bottom: 5px;
+    justify-content: center;
+    text-align: center;
+}
+#ps-content .s-arrow-blue,
+#ps-content .s-underline-yellow {
+    content: "";
+    position: relative;
+    height: 45px;
+}
+#ps-content .s-arrow-blue {
+    clip-path: polygon(5% 0, 50% 75% , 95% 0, 95% 25%, 50% 100%, 5% 25%);
+}
+
+#ps-content .s-arrow-blue {
+    background: var(--primary-darkblue);
+}
+#ps-content .s-underline-yellow {
+    background: var(--details);
+    clip-path: polygon(0 0, 100% 0, 100% 17%, 0 17%);
+}
+
+
+
+/*ŠIROKÉ ROZLIŠENÍ */
+@media (min-width: 1100px) {
+    /*ps-header*/
+    #ps-header {
+        padding-top: 0px;
+    }
+    #ps-header h1 {
+        font-size: 1.8em;
+        font-weight: 700;
+        text-align: center;
+        margin: 10px;
+    }
+    #ps-header p {
+        font-size: 1.1em;
+        font-weight: 400;
+        text-align: center         ;
+
+    }
+        /*ps-timeline*/
+    #ps-timeline {
+        display: block;
+        position: relative;
+        padding: 80px 70px 50px 70px;
+        justify-self: center;
+        width: 100%;
+        height: 170px;
+    }
+            /* základ timeline */
+    #ps-timeline .tl-line {
+        position: relative;
+        content: '';
+        width: 100%;
+        height: 3px;
+        left: 0;
+        background: var(--primary-dark);
+        z-index: 1;
+        border-radius: 50%;
+    }
+    #ps-timeline .tl-start, #ps-timeline .tl-end {
+        position: relative;
+        content: '';
+        height: 20px;
+        z-index: 1;
+    }
+    #ps-timeline .tl-start {
+        border-radius: 50%;
+        width: 20px;
+        background: var(--primary-dark);
+    }
+    #ps-timeline .tl-end {
+        width: 20px;
+        border-right: 2px solid var(--primary-dark);
+        border-bottom: 2px solid var(--primary-dark);
+        transform: rotate(-45deg);
+    }
+    #ps-timeline .tl-start {
+        top: -12px;
+        left: 0;
+    }
+    #ps-timeline .tl-end {
+        top: -32px;
+        left: calc(100% - 7px);
+    }
+    #ps-timeline .tl-start::before,  #ps-timeline .tl-end::before {
+        position: absolute;
+        top: 30px;
+        left: -30px;
+        z-index: 1;
+        color: var(--primary-dark);
+        font-size: 1em;
+        font-weight: 400;
+        line-height: 1.2em;
+        height: 30px;
+        width: 120px;
+    }
+    #ps-timeline .tl-start::before {
+        content: 'první kontakt';
+    }
+    #ps-timeline .tl-end::before {
+        content: 'Budoucí spolupráce';
+        text-align: center;
+        top: -35px;
+        left: -10px;
+        transform: rotate(45deg);
+    }
+            /* body timeline */
+    #ps-timeline .ps, #ps-timeline .cn, #ps-timeline .svt,#ps-timeline .rcn,  #ps-timeline .stu, #ps-timeline .proj, #ps-timeline .in, #ps-timeline .pd {
+        position: relative;
+        content: '';
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        z-index: 1;
+    }
+    #ps-timeline .ps {
+        top: -62px;
+        left: 11.11%;
+        background: var(--primary-dark);
+    }
+    #ps-timeline .cn {
+        top: -102px;
+        left: 22.22%;
+        background: var(--primary-dark);
+    }
+    #ps-timeline .svt {
+        top: -142px;
+        left: 33.33%;
+        background: var(--primary-dark);
+    }
+    #ps-timeline .rcn {
+        top: -182px;
+        left: 44.44%;
+        background: var(--primary-dark);
+    }
+    #ps-timeline .stu {
+        top: -222px;
+        left: 55.55%;
+        background: var(--primary-dark);
+    }
+    #ps-timeline .proj {
+        top: -262px;
+        left: 66.66%;
+        background: var(--primary-dark);
+    }
+    #ps-timeline .in {
+        top: -302px;
+        left: 77.77%;
+        background: var(--primary-dark);
+    }
+    #ps-timeline .pd {
+        top: -342px;
+        left: 88.88%;
+        background: var(--details);
+    }
+    #ps-timeline .ps::before, #ps-timeline .cn::before, #ps-timeline .svt::before, #ps-timeline .rcn::before, #ps-timeline .stu::before, #ps-timeline .proj::before, #ps-timeline .in::before, #ps-timeline .pd::before {
+        position: absolute;
+        color: var(--primary-darkblue);
+        font-size: 1.1em;
+        font-weight: 500;
+        line-height: 1.2em;
+        height: 30px;
+        width: 150px;
+        z-index: 2;
+    }
+    #ps-timeline .ps::before {
+        content: 'První schůzka';
+        top: -30px;
+        left: -30px;
+    }
+    #ps-timeline .cn::before {
+        content: 'Cenová nabídka';
+        top: 50px;
+        left: -40px;
+    }
+    #ps-timeline .svt::before {
+        content: 'Schůzka v terénu';
+        top: -30px;
+        left: -45px;
+    }
+    #ps-timeline .rcn::before {
+        content: 'Revize cenové nabídky';
+        top: 45px;
+        left: -30px;
+    }
+    #ps-timeline .stu::before {
+        content: 'Studie';
+        top: -30px;
+        left: -7px;
+    }
+    #ps-timeline .proj::before {
+        content: 'Zhotovení dokumentace';
+        top: 50px;
+        left: -20px;
+    }
+    #ps-timeline .in::before {
+        content: 'Inženýring';
+        top: -30px;
+        left: -25px;
+    }
+    #ps-timeline .pd::before {
+        content: 'Předání dokumentace';
+        top: 50px;
+        left: -15px;
+    }
+        /*ps-content*/
+    #ps-content {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    #ps-content .h-steps {
+        margin-left: 55px;
+    }
+    #ps-content .ps-icon {
+        text-align: center;
+    }
+    #ps-content .ps-icon img {
+        max-width: 220px;
+        margin: 5px;
+        margin-left: 10px;
+    }
+    #ps-content .ps-text {
+        padding-left: 20px;
+    }
+    #ps-content .ps-text h2 {
+        margin-top: 30px;
+        font-size: 1.4em;
+        font-weight: 700;
+        color: var(--primary-darkblue);
+        text-decoration: none;
+    }
+    #ps-content .ps-text p {
+        font-size: 1em;
+        font-weight: 350;
+        color: var(--primary-dark);
+        text-decoration: none;
+        align-self: center;
+    }
+    #ps-content .steps {
+        max-width: 900px;
+    }
+}
+
+@media (max-width: 450px) {
+    #ps-content .ps-text {
+        padding-left: 0px;
+    }
+    #ps-content .steps > .row {
+        padding: 15px 0px;
+    }    
+}        

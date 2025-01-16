@@ -1,0 +1,174 @@
+/* Font*/
+@font-face {
+    font-family: Poppins;
+    src: url(fonts/Poppins-Regular.ttf);
+    font-weight: normal;
+}
+@font-face {
+    font-family: Poppins;
+    src: url(fonts/Poppins-ExtraBold.ttf);
+    font-weight: bold;
+}
+
+/* root */
+:root {
+    --primary-light: #f3efe5;
+    --primary-light-hover: #c1bfbc;
+    --primary-dark: #263545;
+    --primary-darkblue: #153e6b;
+    --bg-light: #f5f5f5;
+    --bg-light-hover: #ececec;
+    --details: #ffbf00;
+    --details-hover: #c39e1a;
+    --divider: #e2e1e166;
+    --gray-text: #bcbab3;
+}
+
+/* GENERAL */
+body {
+    background: var(--primary-light);
+}
+.top-gap {
+    height: 70px;
+    width: 100%;
+    background: var(--bg-light);
+}
+.underline {
+    border-bottom: 1px solid var(--divider);
+    margin-bottom: 10px;
+}
+.gray-text {
+    color: var(--gray-text);
+}
+.bold-span {
+    font-weight: 700;
+}
+.left-gap {
+    padding-left: 67px;
+}
+strong {
+    color: var(--primary-darkblue);
+}
+.tooltip-href {
+    color: var(--primary-darkblue);
+}
+
+/*MOBILE*/
+    /* header */
+#contact-header {
+    padding-top: 20px;
+    display: block;
+}
+    
+    /* content */
+#contact-content .row {
+    margin-top: 15px;
+}
+#contact-content .logo-style {
+    font-family: BebasNeue;
+}
+#contact-content img {
+    height: 80px;
+    width: 80px;
+}
+#contact-content .logo-style h2, #contact-content .logo-style h3 {
+    color: var(--primary-dark);
+}
+#contact-content .logo-style h2 {
+    font-size: 2.47em;
+    margin-top: 10px;
+    text-transform: uppercase;
+    line-height: 1em;
+}
+#contact-content .logo-style h3 {
+    font-size: 1.0em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 1em;
+}
+#contact-content h2 {
+    color: var(--primary-darkblue);
+    font-size: 1.3em;
+    font-weight: 700;
+    text-decoration: none;
+    text-align: left;
+}
+#contact-content h3 {
+    color: var(--primary-darkblue);
+    font-size: 1.2em;
+    font-weight: 700;
+    text-decoration: none;
+    text-align: left;
+}
+#contact-content ul {
+    list-style-type: circle;
+    margin-left: 30px;
+}
+#contact-content li {
+    list-style-type: disc;
+    color: var(--primary-dark);
+    font-size: 1.05em;
+    font-weight: 400;
+    margin-bottom: 3px;
+}
+#contact-content button {
+    color: var(--primary-dark);
+    background: var(--bg-light);
+    border: 1.5px solid var(--details);
+    border-radius: 4px;
+    font-size: 1.1em;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 15px 40px;
+    width: auto;
+    transition: all 0.3s;
+}
+#contact-content button:hover {
+    color: var(--primary-light);
+    background: var(--details-hover);
+    border-color: var(--details-hover);
+    transition: all 0.3s;
+}
+
+
+    /* mapa */
+#contact-map {
+    padding: 40px 0 20px 0;
+}
+#contact-map iframe {
+    height: 450px;
+    width: 100%;
+    border: 1.5px solid var(--primary-darkblue);
+    border-radius: 4px;
+}
+
+/*PC*/
+@media (max-width: 1100px) {
+/* GENERAL */
+    .top-gap {
+        height: 80px;
+    }
+
+/* kontakt - content*/
+}
+
+@media (max-width: 410px) {
+    #contact-content img {
+        height: 50px;
+        width: fit-content;
+    }    
+    #contact-content .logo-style h2 {
+        font-size: 1.5em;
+        margin-top: 10px;
+        text-transform: uppercase;
+        line-height: 1em;
+
+    }
+    #contact-content .logo-style h3 {
+        margin-top: 8px;
+        font-size: 0.8em;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        line-height: 1em;
+    }    
+}

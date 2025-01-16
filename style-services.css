@@ -1,0 +1,139 @@
+/* Font*/
+@font-face {
+    font-family: Poppins;
+    src: url(fonts/Poppins-Regular.ttf);
+    font-weight: normal;
+}
+@font-face {
+    font-family: Poppins;
+    src: url(fonts/Poppins-ExtraBold.ttf);
+    font-weight: bold;
+}
+
+/* root */
+:root {
+    --primary-light: #f3efe5;
+    --primary-light-hover: #c1bfbc;
+    --primary-dark: #263545;
+    --primary-darkblue: #153e6b;
+    --bg-light: #f5f5f5;
+    --bg-light-hover: #ececec;
+    --details: #ffbf00;
+    --details-hover: #d8b01f;
+    --divider: #e2e1e166;
+    --gray-text: #bcbab3;
+}
+
+/* GENERAL */
+body {
+    background: var(--primary-light);
+}
+.top-gap {
+    height: 70px;
+    width: 100%;
+    background: var(--bg-light);
+}
+.underline {
+    border-bottom: 1px solid var(--divider);
+    margin-bottom: 10px;
+}
+.gray-text {
+    color: var(--gray-text);
+}
+p, span {
+    color: var(--primary-dark);
+}
+strong {
+    color: var(--primary-darkblue);
+}
+.uppercase {
+    text-transform: uppercase;
+}
+.yellow-text {
+    color: var(--details-hover);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+.yellow-text:hover {
+    color: var(--primary-darkblue);
+    transition: color 0.3s;
+}
+
+/* content */
+    /* serivices-header */
+.href-text {
+    color: var(--details);
+    text-decoration: none;
+    font-weight: 500;
+}
+.href-text:hover {
+    color: var(--details-hover);
+    transition: color 0.3s;
+}
+
+    /*services-content */
+#services-header {
+    margin-top: 20px;
+}
+#services-content {
+    margin-top: 60px;
+    margin-bottom: 20px;
+}
+#services-content .row {
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+#services-content h2 {
+    color: var(--primary-darkblue);
+    font-size: 1.8em;
+    font-weight: 600;
+}
+#services-content h3 {
+    color: var(--details-hover);
+    font-size: 1.2em;
+    font-weight: 500;
+}
+#services-content h4 {
+    color: var(--primary-dark);
+    font-size: 1.3em;
+    font-weight: 500;
+}
+#services-content .doc-steps {
+    margin-top: 20px;
+}
+#services-content .doc-steps .row {
+    padding-left: 20px;
+}
+#services-content button {
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: transparent;
+}
+
+/* TOOLTIPY
+.tooltip-href {
+    text-decoration: none;
+    border-bottom: 2px dotted var(--primary-darkblue);
+    color: var(--primary-dark);
+}
+.tooltip-href:hover {
+    color: var(--primary-dark);
+}
+.tooltip-inner {
+    background: var(--primary-darkblue) !important;
+    color: var(--primary-light);
+}
+.bs-tooltip-top .tooltip-arrow::before,
+.bs-tooltip-auto[data-popper-placement^=top] .tooltip-arrow::before {
+    border-top-color: var(--primary-darkblue) !important;
+} */
+
+
+@media (max-width: 9921px) {
+    #services-content img {
+        width: 120px;
+        height: 120px;
+    }
+}
+
