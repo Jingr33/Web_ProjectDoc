@@ -212,13 +212,13 @@ $references = Reference::getAllReferences($connection);
                             </a>
                             <?php if ($one_reference["image2_path"] !== null): ?>
                                 <a href="<?= $one_reference["image2_path"] ?>" class="d-none" rel="lightbox[sequence_<?= $one_reference["id"] ?>]" data-lightbox="<?= $one_reference["id"] ?>" data-title="<?= $one_reference["image2_name"] ?>" data-alt="<?= $one_reference["image2_name"] ?>" loading="lazy"></a>
-                            <? endif; ?>
+                            <?php endif; ?>
                             <?php if ($one_reference["image3_path"] !== null): ?>
                                 <a href="<?= $one_reference["image3_path"] ?>" class="d-none" rel="lightbox[sequence_<?= $one_reference["id"] ?>]" data-lightbox="<?= $one_reference["id"] ?>" data-title="<?= $one_reference["image3_name"] ?>" data-alt="<?= $one_reference["image3_name"] ?>" loading="lazy"></a>
-                            <? endif; ?>
+                            <?php endif; ?>
                             <?php if ($one_reference["image4_path"] !== null): ?>
                                 <a href="<?= $one_reference["image4_path"] ?>" class="d-none" rel="lightbox[sequence_<?= $one_reference["id"] ?>]" data-lightbox="<?= $one_reference["id"] ?>" data-title="<?= $one_reference["image4_name"] ?>" data-alt="<?= $one_reference["image4_name"] ?>" loading="lazy"></a>
-                            <? endif; ?>
+                            <?php endif; ?>
                         </div>
                         <?php endforeach; ?>       
                     </div>
