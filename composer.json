@@ -1,0 +1,15 @@
+{
+    "name": "jingr33/web-projectdoc",
+    "description": "Static PHP website for projekcestrouhal.cz",
+    "type": "project",
+    "license": "proprietary",
+    "require": {
+        "php": ">=8.5.12"
+    },
+    "config": {
+        "platform": {
+            "php": "8.5.12"
+        },
+        "sort-packages": true
+    }
+}
